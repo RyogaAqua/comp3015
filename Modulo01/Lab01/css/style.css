@@ -15,8 +15,14 @@ h1 {
 
 }
 
-.especial {
+.evil {
     color: red;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.good {
+    color: rgb(0, 102, 255);
     font-weight: bold;
     font-style: italic;
 }
