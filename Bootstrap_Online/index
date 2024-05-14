@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Demo 2 - CDN</title>
+
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+    <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+
+    <h1>Main Title</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa minima itaque quia, quod consequatur est? Sunt eum eaque est fuga, qui delectus aut nulla ducimus! Nihil qui aperiam iste fugit.</p>
+
+    <button class='btn btn-primary'>Primary</button>
+    <br><br>
+    <button class='btn btn-secondary btn-sm'>Secondary</button>    
+    <br><br>
+    <button class='btn btn-danger btn-lg'>Danger</button>
+    <br><br>
+    <button class='btn btn-outline-success btn-block'>Success Outline</button>
+    <br><br>
+    <a href="http://www.google.com" class="btn btn-warning">Google!</a>
+</body>
+</html>
