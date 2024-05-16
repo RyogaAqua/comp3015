@@ -1,0 +1,48 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}
+
+/* Estilos para el formulario */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+}
+
+.btn-primary:hover,
+.btn-secondary:hover {
+    background-color: #0056b3;
+}
+
+/* Otros estilos según sea necesario */
