@@ -12,7 +12,7 @@ class UserModel {
         VALUES (:nombre, :id, :email, :clave)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':nombre', $data['nombre'], PDO::PARAM_STR);
-        $stmt->bindValue(':id', $data['id'], PDO::PARAM_STR);
+        $stmt->bindValue(':id', $data['id'], PDO::PARAM_INT);
         $stmt->bindValue(':email', $data['email'], PDO::PARAM_STR);
         $stmt->bindValue(':clave', password_hash($data['clave'], PASSWORD_DEFAULT), PDO::PARAM_STR);
         $stmt->execute();
@@ -34,7 +34,7 @@ class UserModel {
         :id, email = :email, clave = :clave WHERE id = :id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':nombre', $data['nombre'], PDO::PARAM_STR);
-        $stmt->bindValue(':id', $data['id'], PDO::PARAM_STR);
+        $stmt->bindValue(':id', $data['id'], PDO::PARAM_INT);
         $stmt->bindValue(':email', $data['email'], PDO::PARAM_STR);
         $stmt->bindValue(':clave', $data['clave'], PDO::PARAM_STR);
         $stmt->execute();

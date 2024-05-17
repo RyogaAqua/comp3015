@@ -12,7 +12,7 @@ class ProductModel {
         VALUES (:nombre, :id, :suplidor, :cantidad, :precio)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':nombre', $data['nombre'], PDO::PARAM_STR);
-        $stmt->bindValue(':id', $data['id'], PDO::PARAM_STR);
+        $stmt->bindValue(':id', $data['id'], PDO::PARAM_INT);
         $stmt->bindValue(':suplidor', $data['suplidor'], PDO::PARAM_STR);
         $stmt->bindValue(':cantidad', $data['cantidad'], PDO::PARAM_STR);
         $stmt->bindValue(':precio', $data['precio'], PDO::PARAM_STR);

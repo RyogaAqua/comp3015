@@ -12,7 +12,7 @@ class SupplierModel {
         VALUES (:nombre, :id, :email, :telefono)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':nombre', $data['nombre'], PDO::PARAM_STR);
-        $stmt->bindValue(':id', $data['id'], PDO::PARAM_STR);
+        $stmt->bindValue(':id', $data['id'], PDO::PARAM_INT);
         $stmt->bindValue(':email', $data['email'], PDO::PARAM_STR);
         $stmt->bindValue(':telefono', $data['telefono'], PDO::PARAM_STR);
         $stmt->execute();
@@ -34,7 +34,7 @@ class SupplierModel {
         :id, email = :email, telefono = :telefono WHERE id = :id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':nombre', $data['nombre'], PDO::PARAM_STR);
-        $stmt->bindValue(':id', $data['id'], PDO::PARAM_STR);
+        $stmt->bindValue(':id', $data['id'], PDO::PARAM_INT);
         $stmt->bindValue(':email', $data['email'], PDO::PARAM_STR);
         $stmt->bindValue(':telefono', $data['telefono'], PDO::PARAM_STR);
         $stmt->execute();
