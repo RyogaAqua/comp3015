@@ -19,7 +19,7 @@
                         <th>Email</th>
                         <th>Telefono</th>
                         <th class='text-center'>
-                            <a href='index.php?url=product/create/' class='btn btn-primary'>Crear</a>
+                            <a href='index.php?url=supplier/create/' class='btn btn-primary'>Crear</a>
                         </th>
                         <!-- Otros campos según sea necesario -->
                     </tr>
@@ -33,8 +33,8 @@
                         <td><?php echo htmlspecialchars($supplier['telefono'], ENT_QUOTES, 'UTF-8'); ?></td>
                         <!-- Otros campos según sea necesario -->
                         <td class='text-center'>
-                            <a href='index.php?url=product/update/<?php echo htmlspecialchars($supplier['id'], ENT_QUOTES, 'UTF-8'); ?>' class='btn btn-success'>Editar</a>
-                            <a href='index.php?url=product/delete/<?php echo htmlspecialchars($supplier['id'], ENT_QUOTES, 'UTF-8'); ?>' class='btn btn-danger'>Borrar</a>
+                            <a href='index.php?url=supplier/update/<?php echo htmlspecialchars($supplier['id'], ENT_QUOTES, 'UTF-8'); ?>' class='btn btn-success'>Editar</a>
+                            <a href='index.php?url=supplier/delete/<?php echo htmlspecialchars($supplier['id'], ENT_QUOTES, 'UTF-8'); ?>' class='btn btn-danger'>Borrar</a>
                         </td>
                     </tr>
                     <?php endforeach; ?>

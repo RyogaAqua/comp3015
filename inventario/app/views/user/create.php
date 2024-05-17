@@ -3,29 +3,29 @@
     <h2 class="text-info">Crear Usuario</h2>
 
     <form action="index.php?url=user/save" method="post" class="form">
-
+        
         <div class="form-group mb-3">
             <label>Nombre</label>
-            <input type="text" name="nombre" class="form-control" value="" required>
+            <input type="text" name="nombre" class="form-control" required>
         </div>
 
         <div class="form-group mb-3">
             <label>Id del usuario</label>
-            <input type="text" name="id" class="form-control" placeholder="id" value="" required>
+            <input type="text" name="id" class="form-control" placeholder="id" required>
         </div>
             
         <div class="form-group mb-3">
             <label>Email</label>
-            <input type="email" name="email" class="form-control" value="" required>
+            <input type="email" name="email" class="form-control" required>
         </div>
 
         <div class="form-group mb-3">
             <label>Clave</label>
-            <input type="password" name="clave" class="form-control" placeholder="Nueva Contraseña" value="" required>            
+            <input type="password" name="clave" class="form-control" placeholder="Nueva Contraseña" required>            
         </div>
             
         <div class="form-group">
-            <a href="." class="btn btn-secondary">Cancelar</a>
+            <a href="index.php?url=user" class="btn btn-secondary">Cancelar</a>
             <button class="btn btn-primary" type="submit">Guardar</button>            
         </div>
     </form>

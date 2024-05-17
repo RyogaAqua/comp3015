@@ -15,93 +15,78 @@ class UserController {
     public function index() {
         $data = $this->listUsers();
         include 'app/views/home.php';
+        exit;
     }
 
     public function create() {
-        // Cargar la vista del formulario de actualización
         $data['view'] = 'app/views/user/create.php';
         include 'app/views/home.php';
+        exit;
     }
 
     public function read($id) {
         $user = $this->userModel->read($id);
         if ($user) {
-            include 'app/views/user/read.php';
-            // Cargar una vista para mostrar los datos del usuario
+            $data['user'] = $user;
+            $data['view'] = 'app/views/user/read.php';
+            include 'app/views/home.php';
         } else {
-            echo 'Error reading a record.';
-            // Mostrar un mensaje de error o redirigir
+            echo 'Error reading the record.';
         }
+        exit;
     }
 
     public function update($id) {
-        // Cargar la vista del formulario de actualización
         $data['user'] = $this->userModel->read($id);
         $data['view'] = 'app/views/user/update.php';
         include 'app/views/home.php';
-        
+        exit;
     }
 
-    public function save($data) {
+    public function save() {
         $new_data = [
-            'id' => $data['id'],
-            'nombre' => $data['nombre'],
-            'email' => $data['email'],
-            'clave' => $data['clave']
+            'id' => $_POST['id'],
+            'nombre' => $_POST['nombre'],
+            'email' => $_POST['email'],
+            'clave' => $_POST['clave']
         ];
 
-        if ($data['id'] == 0)
+        if ($_POST['id'] == 0) {
             $result = $this->userModel->create($new_data);
-        else
-            $result = $this->userModel->update($new_data);
-
-         if ($result) {
-            if ($data['id'] == 0) {
-                // Se pudo añadir con éxito
-                $data['message'] = 'Récord añadido con éxito.';
-            } else {
-                // Se pudo actualizar, mensaje de éxito
-                $data['message'] = 'Récord actualizado con éxito.';
-            }
         } else {
-            // No se pudo actualizar, mensaje de error
+            $result = $this->userModel->update($new_data);
+        }
+
+        if ($result) {
+            $data['message'] = $_POST['id'] == 0 ? 'Récord añadido con éxito.' : 'Récord actualizado con éxito.';
+        } else {
             $data['message'] = 'Récord NO pudo ser actualizado.';
         }
 
         $data['view'] = 'app/views/user/list.php';
         $data['users'] = $this->userModel->getAll();
         include 'app/views/home.php';
+        exit;
     }
 
     public function delete($id) {
-        // Cargar la vista del formulario de actualización
         $data['user'] = $this->userModel->read($id);
         $data['view'] = 'app/views/user/delete.php';
         include 'app/views/home.php';
-                
+        exit;
     }
 
-    public function remove($id) 
-    {
+    public function remove($id) {
         $result = $this->userModel->delete($id);
-        if ($result) {
-            // Redirigir o mostrar un mensaje de éxito
-        } else {
-            // Mostrar un mensaje de error
-        }
+        $data['message'] = $result ? 'Usuario eliminado exitosamente' : 'No se pudo eliminar el usuario';
+        $this->index();
+        exit;
     }
 
     public function listUsers() {
-        // $users = $this->userModel->getAll();
         $data['users'] = $this->userModel->getAll();
-        $data['view'] = 'user/list.php';
-        // $view = 'app/views/user/update.php';
+        $data['view'] = 'app/views/user/list.php';
         return $data;
-    
-        // Carga la vista y pasa los datos de los usuarios
-        // include 'app/views/user/list.php';
     }
-    
 }
-
 ?>
