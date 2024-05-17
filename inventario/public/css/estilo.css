@@ -1,4 +1,4 @@
-/* Estilos generales */
+/* estilos para la pagina web */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -12,7 +12,6 @@ body {
     margin: auto;
 }
 
-/* Estilos para el formulario */
 .form-group {
     margin-bottom: 1rem;
 }
@@ -45,4 +44,3 @@ body {
     background-color: #0056b3;
 }
 
-/* Otros estilos según sea necesario */

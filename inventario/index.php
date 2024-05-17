@@ -1,5 +1,5 @@
 <?php
-// Dirige las solicitudes de a la tablas de la base de datos a sus controladores especificos
+// Dirige las solicitudes de las tablas de la base de datos a sus controladores específicos
 require_once './app/config/Database.php';
 
 require_once './app/models/UserModel.php';

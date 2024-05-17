@@ -1,4 +1,5 @@
 <?php
+// maneja la informacion de la tabla de suplidores
 include_once 'app/models/SupplierModel.php';
 include_once 'app/config/Database.php';
 
