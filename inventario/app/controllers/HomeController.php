@@ -17,8 +17,6 @@ class HomeController {
         $supplierController = new SupplierController();
         $data['suppliers'] = $supplierController->listSuppliers(); // Almacena los proveedores en $data['suppliers']
 
-        // Ahora, $data contiene todos los datos necesarios para mostrar en la vista
-
         // Incluye la vista y pasa los datos a la misma
         include 'app/views/home.php';
     }
