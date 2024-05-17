@@ -8,7 +8,7 @@ class UserModel {
     }
 
     public function create($data) {
-        $sql = "INSERT INTO usuarios (nombre, id, email, clave) 
+        $sql = "INSERT INTO usuario (nombre, id, email, clave) 
         VALUES (:nombre, :id, :email, :clave)";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':nombre', $data['nombre'], PDO::PARAM_STR);
@@ -21,7 +21,7 @@ class UserModel {
     }
 
     public function read($id) {
-        $sql = "SELECT * FROM usuarios WHERE id = :id";
+        $sql = "SELECT * FROM usuario WHERE id = :id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->execute();
@@ -30,7 +30,7 @@ class UserModel {
     }
 
     public function update($data) {
-        $sql = "UPDATE usuarios SET nombre = :nombre, id = 
+        $sql = "UPDATE usuario SET nombre = :nombre, id = 
         :id, email = :email, clave = :clave WHERE id = :id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':nombre', $data['nombre'], PDO::PARAM_STR);
@@ -43,7 +43,7 @@ class UserModel {
     }
 
     public function delete($id) {
-        $sql = "DELETE FROM usuarios WHERE id = :id";
+        $sql = "DELETE FROM usuario WHERE id = :id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindValue(':id', $id, PDO::PARAM_INT);
         $stmt->execute();

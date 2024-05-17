@@ -53,7 +53,6 @@ class ProductModel {
         return $stmt->rowCount();
     }
 
-
     public function getAll() {
         $sql = "SELECT * FROM producto";
         $stmt = $this->db->prepare($sql);
